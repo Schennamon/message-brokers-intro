@@ -1,0 +1,14 @@
+# frozen_string_literal: true
+
+source 'https://rubygems.org'
+
+ruby '3.0.3'
+
+# Bunny is a popular, easy to use, mature Ruby client for RabbitMQ
+gem "bunny", ">= 2.19.0"
+
+# A Ruby gem to load environment variables from `.env`.
+gem 'dotenv'
+
+# A simple, standardized way to build and use Service Objects in Ruby
+gem 'simple_command'
