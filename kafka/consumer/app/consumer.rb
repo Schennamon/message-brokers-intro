@@ -14,7 +14,8 @@ class Consumer
     consumer.subscribe('my-topic')
 
     consumer.each_message do |message|
-      save_number(message.value)
+      save_number(message.value.to_i)
+      
       puts message.value
     end
   rescue Interrupt => _
@@ -24,8 +25,6 @@ class Consumer
   private
 
   def save_number(value)
-    return unless value.is_a?(Integer)
-    
     ActiveRecord::Base.connection.execute("INSERT INTO numbers (value) VALUES (#{value});")
   end
 

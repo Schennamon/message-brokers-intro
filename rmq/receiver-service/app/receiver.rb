@@ -14,9 +14,9 @@ class Receiver
     puts " [*] Receiver waiting for messages."
 
     queue.subscribe(block: true) do |delivety_info, properties, body|
-      number = ::Number.create(value: body.to_i)
+      save_number(body.to_i)
 
-      puts " [x] Received #{number.value}"
+      puts " [x] Received #{body}"
     end
   rescue Interrupt => _
     connection.close
@@ -24,6 +24,10 @@ class Receiver
   end
 
   private
+
+  def save_number(value)
+    ActiveRecord::Base.connection.execute("INSERT INTO numbers (value) VALUES (#{value});")
+  end
 
   def open_connection
     connection = Bunny.new(

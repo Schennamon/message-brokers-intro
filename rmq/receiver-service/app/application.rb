@@ -10,7 +10,6 @@ require 'erb'
 require 'bunny'
 require 'simple_command'
 
-require_relative 'models/number'
 require_relative 'receiver'
 
 Dotenv.load(".env.#{ENV.fetch('ENVIRONMENT')}.local", ".env.#{ENV.fetch('ENVIRONMENT')}", '.env')
