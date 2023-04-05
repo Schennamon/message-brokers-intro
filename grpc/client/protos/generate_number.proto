@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package generate_number;
+
+service IntegerGenerator {
+  rpc Generate(google.protobuf.Empty) returns (RandomNumber) {}
+}
+
+message RandomNumber {
+  int32 value = 1;
+}
