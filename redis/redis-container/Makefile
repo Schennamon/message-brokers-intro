@@ -5,6 +5,3 @@ up:
 # Stop and remove a running container
 stop:
 	docker stop redis-container; docker rm redis-container
-
-create_network:
-	docker network create network
