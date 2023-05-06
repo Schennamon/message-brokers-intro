@@ -1,0 +1,13 @@
+# frozen_string_literal: true
+
+source 'https://rubygems.org'
+
+ruby '3.0.3'
+
+# A Ruby gem to load environment variables from `.env`.
+gem 'dotenv'
+
+# A simple, standardized way to build and use Service Objects in Ruby
+gem 'simple_command'
+
+gem 'redis'
